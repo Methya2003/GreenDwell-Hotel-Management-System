@@ -1,0 +1,36 @@
+using System;
+using System.Windows.Forms;
+
+namespace HotelManagementSystem
+{
+    public partial class LoginForm : Form
+    {
+        public LoginForm()
+        {
+            InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            // Hardcoded credentials (for demonstration purposes)
+            string validUsername = "admin";
+            string validPassword = "admin123";
+
+            if (username == validUsername && password == validPassword)
+            {
+                MessageBox.Show("Login successful!");
+                // Here you can open the main form of your hotel management system
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password. Please try again.");
+            }
+        }
+    }
+}
